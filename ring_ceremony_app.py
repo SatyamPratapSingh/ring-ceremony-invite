@@ -1,5 +1,6 @@
 
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template_string, request, url_for
+
 import sqlite3
 import os
 
@@ -31,7 +32,7 @@ html_template = """
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-image: url('bgphoto.jpg'); /* Replace with actual image path */
+           background-image: url('{{ url_for('static', filename='bgphoto.jpg') }}'); /* Replace with actual image path */
             background-size: cover;
             background-position: center;
             color: white;
