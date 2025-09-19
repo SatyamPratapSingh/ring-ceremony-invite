@@ -31,7 +31,7 @@ html_template = """
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-image: url('shared image (1).jfif'); /* Replace with actual image path */
+            background-image: url('bgphoto.jpg'); /* Replace with actual image path */
             background-size: cover;
             background-position: center;
             color: white;
