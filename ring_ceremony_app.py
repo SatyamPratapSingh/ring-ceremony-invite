@@ -8,12 +8,16 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+
 def init_db():
+    if os.path.exists('photos.db'):
+        os.remove('photos.db')  # Delete corrupted DB
     conn = sqlite3.connect('photos.db')
     c = conn.cursor()
-    c.execute("""CREATE TABLE IF NOT EXISTS photos (id INTEGER PRIMARY KEY, filename TEXT)""")
+    c.execute('''CREATE TABLE IF NOT EXISTS photos (id INTEGER PRIMARY KEY, filename TEXT)''')
     conn.commit()
     conn.close()
+
 
 init_db()
 
