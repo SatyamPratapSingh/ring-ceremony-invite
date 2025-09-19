@@ -1,0 +1,8 @@
+
+services:
+  - type: web
+    name: ring-ceremony-invite
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn ring_ceremony_app:app
+    autoDeploy: true
